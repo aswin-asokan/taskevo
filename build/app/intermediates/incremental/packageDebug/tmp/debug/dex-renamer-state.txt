@@ -1,0 +1,4 @@
+#Sun Jul 16 16:50:41 IST 2023
+base.0=/home/aswin/Documents/todo/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
