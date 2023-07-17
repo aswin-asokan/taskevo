@@ -2,7 +2,7 @@ A mobile application to keep track of your tasks.
 
 ### Download
 
-- **Recommended:** Download and install APK from **[GitHub Releases](https://github.com/aswin-asokan/To-Do/releases/tag/v1.0.0)**
+- **Recommended:** Download and install APK from **[GitHub Releases](https://github.com/aswin-asokan/To-Do/releases/tag/v1.1.0)**
 
 ### Main Features
 
