@@ -41,6 +41,7 @@ dependencies:
   hive_generator: ^2.0.0
   build_runner: ^2.4.6
   flutter_launcher_icons: ^0.13.1
+  google_nav_bar: ^5.0.6
 
 dev_dependencies:
   flutter_test:
@@ -60,7 +61,6 @@ flutter_icons:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

@@ -1,4 +1,4 @@
-#Sun Jul 16 17:17:55 IST 2023
+#Mon Jul 17 13:46:23 IST 2023
 base.0=/home/aswin/Documents/todo/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

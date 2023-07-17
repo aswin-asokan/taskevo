@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:todo/notes/notesEdit.dart';
 
 Widget toDO(BuildContext context, bool val, String head,
     Function(bool?)? onChanged, Function() delete, Function() update) {
@@ -16,7 +17,7 @@ Widget toDO(BuildContext context, bool val, String head,
 
   return Container(
     child: Padding(
-      padding: const EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 10),
+      padding: const EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
       child: Container(
         constraints: BoxConstraints(minHeight: 70),
         decoration: BoxDecoration(
@@ -45,6 +46,61 @@ Widget toDO(BuildContext context, bool val, String head,
             ],
           ),
         ]),
+      ),
+    ),
+  );
+}
+
+Widget Notes(BuildContext context, String head, String desc, Function() delete,
+    Function(String hN, String dN) update) {
+  return GestureDetector(
+    onTap: () async {
+      final result = await Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => edit(
+                  head: head,
+                  desc: desc,
+                )),
+      );
+      if (result['action'] == 'delete') {
+        delete();
+      } else {
+        update(result['heading'], result['description']);
+      }
+    },
+    child: Padding(
+      padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
+      child: Container(
+        child: Container(
+          constraints: BoxConstraints(minHeight: 70),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            color: Theme.of(context).colorScheme.secondaryContainer,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  head,
+                  style: GoogleFonts.openSans(
+                      fontSize: 20, fontWeight: FontWeight.w500),
+                ),
+                Container(
+                  child: Text(
+                    desc,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    style: GoogleFonts.openSans(
+                        fontWeight: FontWeight.normal, fontSize: 13),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     ),
   );

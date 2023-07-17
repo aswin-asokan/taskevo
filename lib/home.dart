@@ -33,13 +33,6 @@ class _homeState extends State<home> {
   bool value = false;
 
   @override
-  void deleteWidget(int index) {
-    setState(() {
-      db.widgets.removeAt(index); // Remove the widget at the specified index
-    });
-    db.updateDataBase();
-  }
-
   void addWidget(String head) {
     setState(() {
       db.widgets.insert(
@@ -91,6 +84,7 @@ class _homeState extends State<home> {
                       height: 20,
                     ),
                     TextField(
+                      style: GoogleFonts.openSans(),
                       controller: controller1,
                       autofocus: true,
                       onChanged: (value) {
@@ -98,6 +92,7 @@ class _homeState extends State<home> {
                       },
                       decoration: InputDecoration(
                           hintText: 'New to-do',
+                          hintStyle: GoogleFonts.openSans(),
                           border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20)))),
@@ -170,6 +165,7 @@ class _homeState extends State<home> {
                       height: 20,
                     ),
                     TextField(
+                      style: GoogleFonts.openSans(),
                       controller: controller2,
                       autofocus: true,
                       onChanged: (value) {

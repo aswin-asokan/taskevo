@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:todo/home.dart';
+import 'package:todo/navigation.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -22,6 +23,6 @@ class MyApp extends StatelessWidget {
         ),
         darkTheme: ThemeData.dark(useMaterial3: true), // standard dark theme
         themeMode: ThemeMode.system,
-        home: home());
+        home: navigation());
   }
 }

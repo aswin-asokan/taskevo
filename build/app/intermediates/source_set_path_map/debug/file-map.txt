@@ -10,5 +10,4 @@ com.example.todo.app-rs-8 /home/aswin/Documents/todo/build/app/generated/res/rs/
 com.example.todo.app-mergeDebugResources-9 /home/aswin/Documents/todo/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
 com.example.todo.app-mergeDebugResources-10 /home/aswin/Documents/todo/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
 com.example.todo.app-merged_res-11 /home/aswin/Documents/todo/build/app/intermediates/merged_res/debug
-com.example.todo.app-packaged_res-12 /home/aswin/Documents/todo/build/fluttertoast/intermediates/packaged_res/debug
-com.example.todo.app-packaged_res-13 /home/aswin/Documents/todo/build/path_provider_android/intermediates/packaged_res/debug
+com.example.todo.app-packaged_res-12 /home/aswin/Documents/todo/build/path_provider_android/intermediates/packaged_res/debug
