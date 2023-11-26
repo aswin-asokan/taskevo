@@ -42,6 +42,10 @@ dependencies:
   build_runner: ^2.4.6
   flutter_launcher_icons: ^0.13.1
   google_nav_bar: ^5.0.6
+  simple_markdown_editor: ^0.2.0
+  flutter_markdown: ^0.6.9+1
+  markdown_toolbar: ^0.5.0
+  url_launcher: ^6.1.14
 
 dev_dependencies:
   flutter_test:

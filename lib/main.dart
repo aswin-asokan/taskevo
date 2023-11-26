@@ -21,7 +21,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
         ),
-        darkTheme: ThemeData.dark(useMaterial3: true), // standard dark theme
+        darkTheme: ThemeData.dark(useMaterial3: true).copyWith(
+            scaffoldBackgroundColor:
+                Color.fromRGBO(63, 63, 63, 1)), // standard dark theme
         themeMode: ThemeMode.system,
         home: navigation());
   }

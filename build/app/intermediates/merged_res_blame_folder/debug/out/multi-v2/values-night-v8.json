@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.todo.app-mergeDebugResources-9:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.todo.app-mergeDebugResources-11:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/aswin/Documents/todo/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/aswin/Documents/GitHub/To-Do/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

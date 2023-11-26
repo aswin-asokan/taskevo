@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todo/notes/notesEdit.dart';
 
@@ -88,14 +89,8 @@ Widget Notes(BuildContext context, String head, String desc, Function() delete,
                   style: GoogleFonts.openSans(
                       fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                Container(
-                  child: Text(
-                    desc,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    style: GoogleFonts.openSans(
-                        fontWeight: FontWeight.normal, fontSize: 13),
-                  ),
+                MarkdownBody(
+                  data: desc,
                 )
               ],
             ),
