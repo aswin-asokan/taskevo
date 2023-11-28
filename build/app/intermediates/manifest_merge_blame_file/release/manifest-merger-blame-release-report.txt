@@ -1,0 +1,108 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.todo"
+4    android:versionCode="3"
+5    android:versionName="1.1.5" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml
+10
+11    <permission
+11-->[androidx.core:core:1.10.1] /home/aswin/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+12        android:name="com.example.todo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.10.1] /home/aswin/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.10.1] /home/aswin/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.example.todo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.10.1] /home/aswin/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.10.1] /home/aswin/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+16
+17    <application
+18        android:name="android.app.Application"
+18-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:4:9-42
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.10.1] /home/aswin/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+20        android:icon="@mipmap/ic_launcher"
+20-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:5:9-43
+21        android:label="todo" >
+21-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:3:9-29
+22        <activity
+22-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:6:9-26:20
+23            android:name="com.example.todo.MainActivity"
+23-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:7:13-41
+24            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+24-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:11:13-163
+25            android:exported="true"
+25-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:8:13-36
+26            android:hardwareAccelerated="true"
+26-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:12:13-47
+27            android:launchMode="singleTop"
+27-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:9:13-43
+28            android:theme="@style/LaunchTheme"
+28-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:10:13-47
+29            android:windowSoftInputMode="adjustResize" >
+29-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:13:13-55
+30
+31            <!--
+32                 Specifies an Android theme to apply to this Activity as soon as
+33                 the Android process has started. This theme is visible to the user
+34                 while the Flutter UI initializes. After that, this theme continues
+35                 to determine the Window background behind the Flutter UI.
+36            -->
+37            <meta-data
+37-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:18:13-21:17
+38                android:name="io.flutter.embedding.android.NormalTheme"
+38-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:19:15-70
+39                android:resource="@style/NormalTheme" />
+39-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:20:15-52
+40
+41            <intent-filter>
+41-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:22:13-25:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:23:17-68
+42-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:23:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:24:17-76
+44-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:24:27-74
+45            </intent-filter>
+46        </activity>
+47        <!--
+48             Don't delete the meta-data below.
+49             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+50        -->
+51        <meta-data
+51-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:29:9-31:33
+52            android:name="flutterEmbedding"
+52-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:30:13-44
+53            android:value="2" />
+53-->/home/aswin/Documents/GitHub/To-Do/android/app/src/main/AndroidManifest.xml:31:13-30
+54
+55        <activity
+55-->[:url_launcher_android] /home/aswin/Documents/GitHub/To-Do/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-13:74
+56            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+56-->[:url_launcher_android] /home/aswin/Documents/GitHub/To-Do/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+57            android:exported="false"
+57-->[:url_launcher_android] /home/aswin/Documents/GitHub/To-Do/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+58            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+58-->[:url_launcher_android] /home/aswin/Documents/GitHub/To-Do/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
+59
+60        <uses-library
+60-->[androidx.window:window:1.0.0-beta04] /home/aswin/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+61            android:name="androidx.window.extensions"
+61-->[androidx.window:window:1.0.0-beta04] /home/aswin/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+62            android:required="false" />
+62-->[androidx.window:window:1.0.0-beta04] /home/aswin/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+63        <uses-library
+63-->[androidx.window:window:1.0.0-beta04] /home/aswin/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+64            android:name="androidx.window.sidecar"
+64-->[androidx.window:window:1.0.0-beta04] /home/aswin/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+65            android:required="false" />
+65-->[androidx.window:window:1.0.0-beta04] /home/aswin/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+66    </application>
+67
+68</manifest>
