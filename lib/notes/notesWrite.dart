@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_quill/flutter_quill.dart';
+import 'dart:convert';
 
 class write extends StatefulWidget {
   write({
@@ -12,6 +12,7 @@ class write extends StatefulWidget {
 }
 
 class _writeState extends State<write> {
+  QuillController _controller = QuillController.basic();
   TextEditingController controller1 = TextEditingController();
   TextEditingController _textEditingController =
       TextEditingController(text: '');
@@ -25,6 +26,11 @@ class _writeState extends State<write> {
     }
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        title: TextField(
+            controller: controller1,
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            decoration: InputDecoration.collapsed(hintText: 'Title')),
         leading: IconButton(
           icon: Icon(Icons.close),
           onPressed: () {
@@ -35,15 +41,10 @@ class _writeState extends State<write> {
           IconButton(
               onPressed: () {
                 setState(() {
-                  setState(() => {this._tappedCount++});
-                });
-              },
-              icon: Icon(Icons.notes_outlined)),
-          IconButton(
-              onPressed: () {
-                setState(() {
                   head = controller1.text.toString();
-                  _text = _textEditingController.text.toString();
+                  var json = _controller.document.toDelta().toJson();
+                  String s = jsonEncode(json);
+                  _text = s;
                 });
 
                 Navigator.pop(
@@ -54,64 +55,39 @@ class _writeState extends State<write> {
                   },
                 );
               },
-              icon: Icon(Icons.check))
+              icon: Icon(Icons.save_outlined))
         ],
       ),
-      body: Container(
-        child: Padding(
-          padding: EdgeInsets.only(left: 15, right: 15),
-          child: Column(
-            children: [
-              TextField(
-                controller: controller1,
-                style: GoogleFonts.openSans(fontSize: 30),
-                decoration: InputDecoration.collapsed(
-                    hintText: 'Title',
-                    hintStyle: GoogleFonts.openSans(fontSize: 30)),
-              ),
-              Divider(color: Colors.grey),
-              SizedBox(
-                height: 5,
-              ),
-              showEditor
-                  ? Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: TextField(
-                          controller: _textEditingController,
-                          maxLines: null,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                          onChanged: (value) {
-                            setState(() {
-                              _text = value;
-                            });
-                          },
-                        ),
-                      ),
-                    )
-                  : Expanded(
-                      child: SizedBox.expand(
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: MarkdownBody(data: this._text),
-                        ),
-                      ),
-                    ),
-            ],
+      body: QuillProvider(
+        configurations: QuillConfigurations(
+          controller: _controller,
+          sharedConfigurations: const QuillSharedConfigurations(
+            locale: Locale('en'),
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        shape: CircleBorder(),
-        onPressed: () {
-          _textEditingController.text = '${_textEditingController.text}\n- ';
-          _textEditingController.selection = TextSelection.fromPosition(
-            TextPosition(offset: _textEditingController.text.length),
-          );
-        },
-        child: Icon(Icons.add),
+        child: Column(
+          children: [
+            const QuillToolbar(
+              configurations: QuillToolbarConfigurations(
+                  toolbarSectionSpacing: 0,
+                  sectionDividerSpace: 0,
+                  showSubscript: false,
+                  showSuperscript: false,
+                  showInlineCode: false,
+                  toolbarIconAlignment: WrapAlignment.center),
+            ),
+            Expanded(
+              child: Padding(
+                padding:
+                    EdgeInsets.only(right: 20, left: 20, bottom: 50, top: 10),
+                child: QuillEditor.basic(
+                  configurations: const QuillEditorConfigurations(
+                      readOnly: false, autoFocus: true),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

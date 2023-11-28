@@ -1,10 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:markdown/markdown.dart' as md;
-import 'package:google_fonts/google_fonts.dart';
-import 'package:todo/home.dart';
-import 'package:markdown_toolbar/markdown_toolbar.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 
 class edit extends StatefulWidget {
   final String head, desc;
@@ -31,17 +27,22 @@ class _editState extends State<edit> {
   Widget build(BuildContext context) {
     String h = widget.head;
     String d = widget.desc;
+    var json = jsonDecode(d);
+    Document _doc = Document.fromJson(json);
     TextEditingController controller1 = TextEditingController(text: h);
     TextEditingController _textEditingController =
         TextEditingController(text: d);
+    QuillController _controller = QuillController(
+        document: _doc, selection: TextSelection.collapsed(offset: 0));
     late String headE;
-    var showEditor = !(_tappedCount % 2 == 0);
-    if (showEditor) {
-      _textEditingController.text = text;
-    }
     bool checkbox = false;
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        title: TextField(
+            controller: controller1,
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            decoration: InputDecoration.collapsed(hintText: 'Title')),
         leading: IconButton(
           icon: Icon(Icons.close),
           onPressed: () {
@@ -49,14 +50,6 @@ class _editState extends State<edit> {
           },
         ),
         actions: [
-          IconButton(
-              onPressed: () {
-                setState(() {
-                  _textEditingController.text = text;
-                  setState(() => {this._tappedCount++});
-                });
-              },
-              icon: Icon(Icons.notes_outlined)),
           IconButton(
               onPressed: () {
                 setState(() {
@@ -77,8 +70,9 @@ class _editState extends State<edit> {
               onPressed: () {
                 setState(() {
                   headE = controller1.text.toString();
-                  _textEditingController.text = text;
-                  text = _textEditingController.text.toString();
+                  var json = _controller.document.toDelta().toJson();
+                  String s = jsonEncode(json);
+                  text = s;
                 });
                 Navigator.pop(
                   context,
@@ -89,104 +83,40 @@ class _editState extends State<edit> {
                   },
                 );
               },
-              icon: Icon(Icons.check))
+              icon: Icon(Icons.save_outlined))
         ],
       ),
-      body: Container(
-        child: Padding(
-          padding: EdgeInsets.only(left: 15, right: 15),
-          child: Column(
-            children: [
-              Container(
-                child: Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          _textEditingController.text =
-                              '${_textEditingController.text}\n[link name]("https://www.example.com")';
-                          _textEditingController.selection =
-                              TextSelection.fromPosition(
-                            TextPosition(
-                                offset: _textEditingController.text.length),
-                          );
-                        },
-                        icon: Icon(Icons.link))
-                  ],
-                ),
-                height: 50,
-              ),
-              TextField(
-                controller: controller1,
-                style: GoogleFonts.openSans(fontSize: 30),
-                decoration: InputDecoration.collapsed(
-                    hintText: 'Title',
-                    hintStyle: GoogleFonts.openSans(fontSize: 30)),
-              ),
-              Divider(color: Colors.grey),
-              SizedBox(
-                height: 5,
-              ),
-              showEditor
-                  ? Expanded(
-                      child: TextField(
-                        controller: _textEditingController,
-                        maxLines: null,
-                        style: GoogleFonts.openSans(fontSize: 15),
-                        decoration: InputDecoration.collapsed(
-                            hintText: 'Write your notes here',
-                            hintStyle: GoogleFonts.openSans(fontSize: 15)),
-                        onChanged: (value) {
-                          text = value;
-                        },
-                      ),
-                    )
-                  : Expanded(
-                      child: SizedBox.expand(
-                        child: SingleChildScrollView(
-                            child: Padding(
-                          padding: EdgeInsets.only(bottom: 50),
-                          child: MarkdownBody(
-                            checkboxBuilder: (bool isChecked) {
-                              return GestureDetector(
-                                onTap: () {
-                                  if (isChecked == checkbox) {
-                                    checkbox = !isChecked;
-                                  }
-                                },
-                                child: Container(
-                                  width: 20.0,
-                                  height: 20.0,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border:
-                                        Border.all(color: Colors.blueAccent),
-                                    color: isChecked ? Colors.blueAccent : null,
-                                  ),
-                                  child: isChecked
-                                      ? Icon(Icons.check,
-                                          size: 16.0, color: Colors.white)
-                                      : null,
-                                ),
-                              );
-                            },
-                            data: this.text,
-                          ),
-                        )),
-                      ),
-                    ),
-            ],
+      body: QuillProvider(
+        configurations: QuillConfigurations(
+          controller: _controller,
+          sharedConfigurations: const QuillSharedConfigurations(
+            locale: Locale('en'),
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        shape: CircleBorder(),
-        onPressed: () {
-          _textEditingController.text = '${_textEditingController.text}\n- ';
-          _textEditingController.selection = TextSelection.fromPosition(
-            TextPosition(offset: _textEditingController.text.length),
-          );
-        },
-        child: Icon(Icons.add),
+        child: Column(
+          children: [
+            const QuillToolbar(
+              configurations: QuillToolbarConfigurations(
+                  toolbarSectionSpacing: 0,
+                  sectionDividerSpace: 0,
+                  showSubscript: false,
+                  showSuperscript: false,
+                  showInlineCode: false,
+                  toolbarIconAlignment: WrapAlignment.center),
+            ),
+            Expanded(
+              child: Padding(
+                padding:
+                    EdgeInsets.only(right: 20, left: 20, bottom: 50, top: 10),
+                child: QuillEditor.basic(
+                  configurations: QuillEditorConfigurations(
+                    readOnly: false,
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

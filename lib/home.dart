@@ -213,7 +213,6 @@ class _homeState extends State<home> {
                 () => showBottomUp(index, context));
           }),
       floatingActionButton: FloatingActionButton(
-        shape: CircleBorder(),
         onPressed: () {
           showBottom(context);
         },

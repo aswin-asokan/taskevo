@@ -46,6 +46,7 @@ dependencies:
   flutter_markdown: ^0.6.9+1
   markdown_toolbar: ^0.5.0
   url_launcher: ^6.1.14
+  flutter_quill: ^8.1.1
 
 dev_dependencies:
   flutter_test:

@@ -86,7 +86,6 @@ class _notesState extends State<notes> {
             );
           }),
       floatingActionButton: FloatingActionButton(
-        shape: CircleBorder(),
         onPressed: () async {
           final result = await Navigator.push(
             context,
