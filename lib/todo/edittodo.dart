@@ -1,14 +1,17 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker_bdaya/flutter_datetime_picker_bdaya.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 
 class edittodo extends StatefulWidget {
   final String head, desc, priority;
+  final DateTime date;
   edittodo(
       {super.key,
       required this.head,
       required this.desc,
-      required this.priority});
+      required this.priority,
+      required this.date});
   @override
   State<edittodo> createState() => _edittodoState();
 }
@@ -19,12 +22,14 @@ class _edittodoState extends State<edittodo> {
   int counter = 0;
   String prio = "no";
   String heading = "";
+  DateTime dateVal = DateTime(0);
   Document _doc = Document();
   @override
   void initState() {
     String d = widget.desc;
     text = widget.desc;
     heading = widget.head;
+    dateVal = widget.date;
     prio = widget.priority;
     color = (prio == "high")
         ? Colors.redAccent
@@ -70,7 +75,8 @@ class _edittodoState extends State<edittodo> {
                     'action': 'delete',
                     'heading': headE,
                     'description': text,
-                    'priority': prio
+                    'priority': prio,
+                    'date': dateVal
                   },
                 );
               },
@@ -89,7 +95,8 @@ class _edittodoState extends State<edittodo> {
                     'action': 'edit',
                     'heading': headE,
                     'description': text,
-                    'priority': prio
+                    'priority': prio,
+                    'date': dateVal
                   },
                 );
               },
@@ -108,6 +115,7 @@ class _edittodoState extends State<edittodo> {
             Padding(
                 padding: EdgeInsets.only(left: 10, top: 10, right: 10),
                 child: TextField(
+                    autofocus: true,
                     onChanged: (String value) async {
                       heading = value;
                     },
@@ -118,8 +126,34 @@ class _edittodoState extends State<edittodo> {
                       enabledBorder: InputBorder.none,
                       hintText: 'Task Name',
                       suffixIcon: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.notifications),
+                        onPressed: () {
+                          DatePickerBdaya.showDatePicker(context,
+                              theme: DatePickerThemeBdaya(
+                                  doneStyle: TextStyle(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
+                                  cancelStyle: TextStyle(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
+                                  itemStyle: TextStyle(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.surface),
+                              showTitleActions: true,
+                              minTime: DateTime.now(),
+                              maxTime: DateTime(DateTime.now().year + 50),
+                              onChanged: (date) {}, onConfirm: (date) {
+                            dateVal = date;
+                            setState(() {});
+                          },
+                              currentTime: DateTime.now(),
+                              locale: LocaleType.en);
+                        },
+                        icon: Icon(Icons.calendar_today_outlined),
                       ),
                       prefixIcon: IconButton(
                           onPressed: () {

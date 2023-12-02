@@ -10,13 +10,19 @@ Widget toDO(
     String head,
     String desc,
     String priority,
+    DateTime date,
     Function(bool?)? onChanged,
     Function() deleteToDo,
-    Function(String h, String d, String p) updateToDo) {
+    Function(String h, String d, String p, DateTime dT) updateToDo) {
   var json = jsonDecode(desc);
   Document _doc = Document.fromJson(json);
   QuillController _controller = QuillController(
       document: _doc, selection: TextSelection.collapsed(offset: 0));
+  String dateString = date.day.toString() +
+      "-" +
+      date.month.toString() +
+      "-" +
+      date.year.toString();
   Color color = Colors.grey;
   if (priority == "high")
     color = Colors.redAccent;
@@ -61,16 +67,16 @@ Widget toDO(
                           context,
                           MaterialPageRoute(
                               builder: (context) => edittodo(
-                                    head: head,
-                                    desc: desc,
-                                    priority: priority,
-                                  )),
+                                  head: head,
+                                  desc: desc,
+                                  priority: priority,
+                                  date: date)),
                         );
                         if (result['action'] == 'delete') {
                           deleteToDo();
                         } else {
                           updateToDo(result['heading'], result['description'],
-                              result['priority']);
+                              result['priority'], result['date']);
                         }
                       },
                       icon: Icon(Icons.edit))
@@ -98,6 +104,16 @@ Widget toDO(
                 ),
               ),
             ),
+          if (dateString != "1-1-0")
+            Container(
+                color: Theme.of(context).colorScheme.secondaryContainer,
+                width: double.infinity,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 15, bottom: 5),
+                  child: Text(
+                    "Due on: ${dateString}",
+                  ),
+                )),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(

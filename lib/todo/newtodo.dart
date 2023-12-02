@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker_bdaya/flutter_datetime_picker_bdaya.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 
 class newtodo extends StatefulWidget {
@@ -16,6 +17,7 @@ class _newtodState extends State<newtodo> {
   Color color = Colors.grey;
   int counter = 0;
   String prio = "no";
+  DateTime dateVal = DateTime(0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +44,7 @@ class _newtodState extends State<newtodo> {
                       'heading': head,
                       'description': _text,
                       'priority': prio,
+                      'date': dateVal
                     },
                   );
                 }
@@ -61,6 +64,7 @@ class _newtodState extends State<newtodo> {
             Padding(
               padding: EdgeInsets.only(left: 10, top: 10, right: 10),
               child: TextField(
+                  autofocus: true,
                   controller: controller1,
                   style: TextStyle(fontSize: 35, fontWeight: FontWeight.w500),
                   decoration: InputDecoration(
@@ -68,8 +72,34 @@ class _newtodState extends State<newtodo> {
                       enabledBorder: InputBorder.none,
                       hintText: 'Task Name',
                       suffixIcon: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.notifications),
+                        onPressed: () {
+                          DatePickerBdaya.showDatePicker(context,
+                              theme: DatePickerThemeBdaya(
+                                  doneStyle: TextStyle(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
+                                  cancelStyle: TextStyle(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
+                                  itemStyle: TextStyle(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.surface),
+                              showTitleActions: true,
+                              minTime: DateTime.now(),
+                              maxTime: DateTime(DateTime.now().year + 50),
+                              onChanged: (date) {}, onConfirm: (date) {
+                            dateVal = date;
+                            setState(() {});
+                          },
+                              currentTime: DateTime.now(),
+                              locale: LocaleType.en);
+                        },
+                        icon: Icon(Icons.calendar_today_outlined),
                       ),
                       prefixIcon: IconButton(
                           onPressed: () {

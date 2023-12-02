@@ -212,6 +212,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_datetime_picker_bdaya",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/flutter_datetime_picker_bdaya-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_keyboard_visibility",
       "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility-5.4.1",
       "packageUri": "lib/",
@@ -710,7 +716,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-11-30T15:57:10.251436Z",
+  "generated": "2023-12-02T08:35:16.634516Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }
