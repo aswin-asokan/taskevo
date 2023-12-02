@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
 import 'package:todo/notes/notesWrite.dart';
-
+import 'package:todo/notes/widgets.dart';
 import '../database.dart';
-import '../widgets.dart';
 
 class notes extends StatefulWidget {
   const notes({super.key, Function? addW()?});

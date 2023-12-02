@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:todo/home.dart';
 import 'package:todo/navigation.dart';
 
 void main() async {

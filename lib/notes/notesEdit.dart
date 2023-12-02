@@ -13,7 +13,6 @@ class edit extends StatefulWidget {
 class _editState extends State<edit> {
   String text = "";
   @override
-  int _tappedCount = 0; // Declare the TextEditingController
   void initState() {
     String h = widget.head;
     String d = widget.desc;
@@ -35,7 +34,6 @@ class _editState extends State<edit> {
     QuillController _controller = QuillController(
         document: _doc, selection: TextSelection.collapsed(offset: 0));
     late String headE;
-    bool checkbox = false;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

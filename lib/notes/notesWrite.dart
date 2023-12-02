@@ -14,16 +14,9 @@ class write extends StatefulWidget {
 class _writeState extends State<write> {
   QuillController _controller = QuillController.basic();
   TextEditingController controller1 = TextEditingController();
-  TextEditingController _textEditingController =
-      TextEditingController(text: '');
   String head = "", _text = "";
-  int _tappedCount = 1;
   @override
   Widget build(BuildContext context) {
-    var showEditor = !(_tappedCount % 2 == 0);
-    if (!showEditor) {
-      _textEditingController.text = _text;
-    }
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
