@@ -3,6 +3,7 @@ A mobile application to keep track of your tasks and organizing your notes.
 ### Download
 
 - **Recommended:** Download and install APK from **[GitHub Releases](https://github.com/aswin-asokan/To-Do/releases/tag/v1.1.6)**
+- Try out the web app **[here](https://todo-a5cfd.web.app/)**
 
 ### Main Features
 
