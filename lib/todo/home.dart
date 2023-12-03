@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
-import 'package:TasksEVO/database.dart';
-import 'package:TasksEVO/todo/newtodo.dart';
-import 'package:TasksEVO/todo/widgets.dart';
+import 'package:tasksevo/database.dart';
+import 'package:tasksevo/todo/newtodo.dart';
+import 'package:tasksevo/todo/widgets.dart';
 
 class home extends StatefulWidget {
   const home({super.key});

@@ -54,6 +54,10 @@ built_value
 2.12
 file:///home/aswin/.pub-cache/hosted/pub.dev/built_value-8.8.0/
 file:///home/aswin/.pub-cache/hosted/pub.dev/built_value-8.8.0/lib/
+change_app_package_name
+2.12
+file:///home/aswin/.pub-cache/hosted/pub.dev/change_app_package_name-1.1.0/
+file:///home/aswin/.pub-cache/hosted/pub.dev/change_app_package_name-1.1.0/lib/
 characters
 2.12
 file:///home/aswin/.pub-cache/hosted/pub.dev/characters-1.3.0/
@@ -450,10 +454,10 @@ yaml
 2.19
 file:///home/aswin/.pub-cache/hosted/pub.dev/yaml-3.1.2/
 file:///home/aswin/.pub-cache/hosted/pub.dev/yaml-3.1.2/lib/
-TasksEVO
+tasksevo
 3.0
-file:///home/aswin/Documents/GitHub/To-Do/
-file:///home/aswin/Documents/GitHub/To-Do/lib/
+file:///home/aswin/Documents/GitHub/taskevo/
+file:///home/aswin/Documents/GitHub/taskevo/lib/
 sky_engine
 3.2
 file:///home/aswin/snap/flutter/common/flutter/bin/cache/pkg/sky_engine/

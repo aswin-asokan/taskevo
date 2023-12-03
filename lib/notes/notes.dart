@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
-import 'package:TasksEVO/notes/notesWrite.dart';
-import 'package:TasksEVO/notes/widgets.dart';
+import 'package:tasksevo/notes/notesWrite.dart';
+import 'package:tasksevo/notes/widgets.dart';
 import '../database.dart';
 
 class notes extends StatefulWidget {

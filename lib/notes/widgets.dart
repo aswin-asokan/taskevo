@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:TasksEVO/notes/notesEdit.dart';
+import 'package:tasksevo/notes/notesEdit.dart';
 
 Widget Notes(BuildContext context, String head, String desc, Function() delete,
     Function(String hN, String dN) update) {

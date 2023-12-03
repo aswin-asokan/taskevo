@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:TasksEVO/navigation.dart';
+import 'package:tasksevo/navigation.dart';
 
 void main() async {
   await Hive.initFlutter();

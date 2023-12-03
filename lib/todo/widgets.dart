@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:TasksEVO/todo/edittodo.dart';
+import 'package:tasksevo/todo/edittodo.dart';
 
 Widget toDO(
     BuildContext context,
