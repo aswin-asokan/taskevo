@@ -3,7 +3,7 @@
 ## Download the app now to supercharge your productivity and stay organized effortlessly.
 
 Download:
-Recommended: Install the APK directly from **[GitHub Releases](https://github.com/aswin-asokan/To-Do/releases/tag/v1.1.6)**
+Recommended: Install the APK directly from **[GitHub Releases](https://github.com/aswin-asokan/To-Do/releases/tag/v1.1.7)**
 
 Try it out online: Experience the web app **[here](https://todo-a5cfd.web.app/)**
 
