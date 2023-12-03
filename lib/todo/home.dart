@@ -35,10 +35,9 @@ class _homeState extends State<home> {
 
   bool value = false;
 
-  @override
-  void addWidget(
-      String head, String description, String priority, DateTime date) {
-    int insertIndex = 0, startIndex = 0, endIndex = 0;
+  void addWidget(bool val, String head, String description, String priority,
+      DateTime date) {
+    int insertIndex = 0;
     String dateString = date.day.toString() +
         "-" +
         date.month.toString() +
@@ -48,56 +47,47 @@ class _homeState extends State<home> {
       setState(() {
         db.widgets.insert(
           0,
-          [false, head, description, priority, date],
+          [val, head, description, priority, date],
+        );
+      });
+    } else if (db.widgets.length == 1 &&
+        db.widgets[0][4]
+            .isAtSameMomentAs(DateTime.parse("0000-01-01 00:00:00.000"))) {
+      setState(() {
+        db.widgets.insert(
+          0,
+          [val, head, description, priority, date],
         );
       });
     } else {
-      if (priority == "high") {
-        startIndex = 0;
+      if (dateString == "1-1-0") {
+        setState(() {
+          db.widgets.insert(
+            db.widgets.length,
+            [val, head, description, priority, date],
+          );
+        });
       } else {
-        int s = 0;
-        for (int i = 0; i < db.widgets.length; i++) {
-          if (db.widgets[i][3] == "high") s++;
-        }
-        for (int i = s; i < db.widgets.length; i++) {
-          if (db.widgets[i][3] == "mid" && priority == "mid") {
-            startIndex = i;
-            break;
-          }
-          if (db.widgets[i][3] == "low" && priority == "low") {
-            startIndex = i;
-            break;
-          }
-          if (db.widgets[i][3] == "no" && priority == "no") {
-            startIndex = i;
-            break;
-          }
-        }
-        int e = 0;
-        for (int i = startIndex; i < db.widgets.length; i++) {
-          if (db.widgets[i][3] != priority) {
-            endIndex = i;
-            break;
-          }
-        }
-        for (int i = startIndex; i < endIndex; i++) {
+        int i = 0;
+        while (i < db.widgets.length &&
+            !(db.widgets[i][4]
+                .isAtSameMomentAs(DateTime.parse("0000-01-01 00:00:00.000")))) {
           if (date.isAfter(db.widgets[i][4])) {
             insertIndex = i + 1;
           } else {
             break;
           }
+          i++;
         }
+        setState(() {
+          db.widgets.insert(
+            insertIndex,
+            [val, head, description, priority, date],
+          );
+        });
       }
     }
-    print(startIndex);
-    print(endIndex);
-    print(insertIndex);
-    setState(() {
-      db.widgets.insert(
-        insertIndex,
-        [false, head, description, priority, date],
-      );
-    });
+
     db.updateDataBase();
   }
 
@@ -109,8 +99,8 @@ class _homeState extends State<home> {
         db.widgets.insert(db.widgets.length, widgetToMove);
       } else {
         List widgetToMove = db.widgets.removeAt(index);
-        addWidget(
-            widgetToMove[1], widgetToMove[2], widgetToMove[3], widgetToMove[4]);
+        addWidget(val!, widgetToMove[1], widgetToMove[2], widgetToMove[3],
+            widgetToMove[4]);
       }
       ;
     });
@@ -121,9 +111,12 @@ class _homeState extends State<home> {
       index, bool val, String head, String desc, String prio, DateTime date) {
     setState(() {
       db.widgets.removeAt(index);
-      db.widgets.insert(
-        0,
-        [false, head, desc, prio, date],
+      addWidget(
+        val,
+        head,
+        desc,
+        prio,
+        date,
       );
     });
     db.updateDataBase();
@@ -169,7 +162,7 @@ class _homeState extends State<home> {
             MaterialPageRoute(builder: (context) => newtodo()),
           );
           // Call the function with the result from Page2
-          addWidget(result['heading'], result['description'],
+          addWidget(false, result['heading'], result['description'],
               result['priority'], result['date']);
         },
         child: Icon(Icons.add),

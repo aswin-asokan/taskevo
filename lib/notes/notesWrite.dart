@@ -21,6 +21,7 @@ class _writeState extends State<write> {
       appBar: AppBar(
         centerTitle: true,
         title: TextField(
+            textCapitalization: TextCapitalization.words,
             controller: controller1,
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             decoration: InputDecoration.collapsed(hintText: 'Title')),

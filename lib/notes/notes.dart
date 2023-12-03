@@ -15,7 +15,6 @@ class notes extends StatefulWidget {
 TextEditingController controller1 = TextEditingController();
 
 class _notesState extends State<notes> {
-  @override
   final _myBox = Hive.box('mybox');
   database db = database();
 
@@ -34,7 +33,6 @@ class _notesState extends State<notes> {
 
   bool value = false;
 
-  @override
   addWidget(String head, String desc) {
     setState(() {
       db.notes.insert(

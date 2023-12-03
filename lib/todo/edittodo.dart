@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_bdaya/flutter_datetime_picker_bdaya.dart';
 import 'package:flutter_quill/flutter_quill.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class edittodo extends StatefulWidget {
   final String head, desc, priority;
@@ -65,20 +66,50 @@ class _edittodoState extends State<edittodo> {
         actions: [
           IconButton(
               onPressed: () {
-                setState(() {
-                  headE = controller1.text.toString();
-                  text = _textEditingController.text.toString();
-                });
-                Navigator.pop(
-                  context,
-                  {
-                    'action': 'delete',
-                    'heading': headE,
-                    'description': text,
-                    'priority': prio,
-                    'date': dateVal
-                  },
-                );
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(
+                          "Are You Sure?",
+                          style: GoogleFonts.urbanist(),
+                          textAlign: TextAlign.center,
+                        ),
+                        alignment: Alignment.center,
+                        actionsAlignment: MainAxisAlignment.center,
+                        actions: [
+                          MaterialButton(
+                            onPressed: () {
+                              setState(() {
+                                headE = controller1.text.toString();
+                                text = _textEditingController.text.toString();
+                              });
+                              Navigator.pop(context);
+                              Navigator.pop(
+                                context,
+                                {
+                                  'action': 'delete',
+                                  'heading': headE,
+                                  'description': text,
+                                  'priority': prio,
+                                  'date': dateVal
+                                },
+                              );
+                            },
+                            color: Colors.redAccent,
+                            child:
+                                Text("Delete", style: GoogleFonts.urbanist()),
+                          ),
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child:
+                                Text("Cancel", style: GoogleFonts.urbanist()),
+                          )
+                        ],
+                      );
+                    });
               },
               icon: Icon(Icons.delete_outline_outlined)),
           IconButton(
@@ -115,6 +146,7 @@ class _edittodoState extends State<edittodo> {
             Padding(
                 padding: EdgeInsets.only(left: 10, top: 10, right: 10),
                 child: TextField(
+                    textCapitalization: TextCapitalization.words,
                     autofocus: true,
                     onChanged: (String value) async {
                       heading = value;

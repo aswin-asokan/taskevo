@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class edit extends StatefulWidget {
   final String head, desc;
@@ -38,6 +39,7 @@ class _editState extends State<edit> {
       appBar: AppBar(
         centerTitle: true,
         title: TextField(
+            textCapitalization: TextCapitalization.words,
             controller: controller1,
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             decoration: InputDecoration.collapsed(hintText: 'Title')),
@@ -50,18 +52,48 @@ class _editState extends State<edit> {
         actions: [
           IconButton(
               onPressed: () {
-                setState(() {
-                  headE = controller1.text.toString();
-                  text = _textEditingController.text.toString();
-                });
-                Navigator.pop(
-                  context,
-                  {
-                    'action': 'delete',
-                    'heading': headE,
-                    'description': text,
-                  },
-                );
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(
+                          "Are You Sure?",
+                          style: GoogleFonts.urbanist(),
+                          textAlign: TextAlign.center,
+                        ),
+                        alignment: Alignment.center,
+                        actionsAlignment: MainAxisAlignment.center,
+                        actions: [
+                          MaterialButton(
+                            onPressed: () {
+                              setState(() {
+                                headE = controller1.text.toString();
+                                text = _textEditingController.text.toString();
+                              });
+                              Navigator.pop(context);
+                              Navigator.pop(
+                                context,
+                                {
+                                  'action': 'delete',
+                                  'heading': headE,
+                                  'description': text,
+                                },
+                              );
+                            },
+                            color: Colors.redAccent,
+                            child:
+                                Text("Delete", style: GoogleFonts.urbanist()),
+                          ),
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child:
+                                Text("Cancel", style: GoogleFonts.urbanist()),
+                          )
+                        ],
+                      );
+                    });
               },
               icon: Icon(Icons.delete_outline_outlined)),
           IconButton(

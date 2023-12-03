@@ -64,6 +64,7 @@ class _newtodState extends State<newtodo> {
             Padding(
               padding: EdgeInsets.only(left: 10, top: 10, right: 10),
               child: TextField(
+                  textCapitalization: TextCapitalization.words,
                   autofocus: true,
                   controller: controller1,
                   style: TextStyle(fontSize: 35, fontWeight: FontWeight.w500),

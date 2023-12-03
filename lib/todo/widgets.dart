@@ -97,7 +97,7 @@ Widget toDO(
                   child: QuillEditor.basic(
                     configurations: const QuillEditorConfigurations(
                         scrollPhysics: NeverScrollableScrollPhysics(),
-                        maxHeight: 100,
+                        maxHeight: 60,
                         readOnly: true,
                         showCursor: false),
                   ),
