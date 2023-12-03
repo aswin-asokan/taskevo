@@ -2,7 +2,7 @@ A mobile application to keep track of your tasks and organizing your notes.
 
 ### Download
 
-- **Recommended:** Download and install APK from **[GitHub Releases](https://github.com/aswin-asokan/To-Do/releases/tag/v1.1.5)**
+- **Recommended:** Download and install APK from **[GitHub Releases](https://github.com/aswin-asokan/To-Do/releases/tag/v1.1.6)**
 
 ### Main Features
 
