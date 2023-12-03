@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo/todo/home.dart';
-import 'package:todo/notes/notes.dart';
+import 'package:TasksEVO/todo/home.dart';
+import 'package:TasksEVO/notes/notes.dart';
 
 class navigation extends StatefulWidget {
   const navigation({super.key});

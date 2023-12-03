@@ -63,7 +63,7 @@
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/build_runner-2.4.6",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/build_runner-2.4.7",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -261,9 +261,9 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/flutter_lints-2.0.3",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "flutter_localizations",
@@ -273,7 +273,7 @@
     },
     {
       "name": "flutter_quill",
-      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/flutter_quill-8.6.3",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/flutter_quill-8.6.4",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
@@ -303,7 +303,7 @@
     },
     {
       "name": "google_fonts",
-      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/google_fonts-5.1.0",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/google_fonts-6.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -339,9 +339,9 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/http-1.1.0",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/http-1.1.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "http_multi_server",
@@ -387,7 +387,7 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/lints-2.1.1",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/lints-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -477,9 +477,9 @@
     },
     {
       "name": "petitparser",
-      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/petitparser-6.0.1",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/petitparser-6.0.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "platform",
@@ -681,7 +681,7 @@
     },
     {
       "name": "win32",
-      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/win32-5.1.0",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/win32-5.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
@@ -699,9 +699,9 @@
     },
     {
       "name": "xml",
-      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/xml-6.4.2",
+      "rootUri": "file:///home/aswin/.pub-cache/hosted/pub.dev/xml-6.5.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "yaml",
@@ -710,13 +710,13 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "todo",
+      "name": "TasksEVO",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-12-03T07:32:45.147899Z",
+  "generated": "2023-12-03T14:40:43.345115Z",
   "generator": "pub",
   "generatorVersion": "3.2.2"
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
-import 'package:todo/database.dart';
-import 'package:todo/todo/newtodo.dart';
-import 'package:todo/todo/widgets.dart';
+import 'package:TasksEVO/database.dart';
+import 'package:TasksEVO/todo/newtodo.dart';
+import 'package:TasksEVO/todo/widgets.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -61,9 +61,16 @@ class _homeState extends State<home> {
       });
     } else {
       if (dateString == "1-1-0") {
+        for (int i = 0; i < db.widgets.length; i++) {
+          if (db.widgets[i][0] != true) {
+            insertIndex = i + 1;
+          } else {
+            break;
+          }
+        }
         setState(() {
           db.widgets.insert(
-            db.widgets.length,
+            insertIndex,
             [val, head, description, priority, date],
           );
         });
@@ -72,7 +79,7 @@ class _homeState extends State<home> {
         while (i < db.widgets.length &&
             !(db.widgets[i][4]
                 .isAtSameMomentAs(DateTime.parse("0000-01-01 00:00:00.000")))) {
-          if (date.isAfter(db.widgets[i][4])) {
+          if (date.isAfter(db.widgets[i][4]) && db.widgets[i][0] != true) {
             insertIndex = i + 1;
           } else {
             break;

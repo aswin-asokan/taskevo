@@ -1,0 +1,4 @@
+* Added description section for tasks
+* Add due dates for each tasks
+* Add colour codes for each tasks
+* Organise tasks based on due dates
