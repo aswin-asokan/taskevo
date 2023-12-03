@@ -1,23 +1,28 @@
-A mobile application to keep track of your tasks and organizing your notes.
+# Welcome to Your Personal Task and Note Organizer!
 
-### Download
+## Download the app now to supercharge your productivity and stay organized effortlessly.
 
-- **Recommended:** Download and install APK from **[GitHub Releases](https://github.com/aswin-asokan/To-Do/releases/tag/v1.1.6)**
-- Try out the web app **[here](https://todo-a5cfd.web.app/)**
+Download:
+Recommended: Install the APK directly from **[GitHub Releases](https://github.com/aswin-asokan/To-Do/releases/tag/v1.1.6)**
 
-### Main Features
+Try it out online: Experience the web app **[here](https://todo-a5cfd.web.app/)**
 
-* Minimal
-* Create notes.
-* Local storage (no sign in needed).
-* Edit and delete tasks and notes.
-* Flutter quill implemented for rich note creation.
-* Add subtasks and description with each tasks.
-* Add colour codes to each tasks for easy recognization.
-* Add due dates and organize your tasks.
-* Dark theme support (android 10+).
+## Main Features:
 
-### Screenshots
+- **Minimalistic Design:** Streamlined and clutter-free, our app focuses on simplicity for an intuitive user experience.
+
+- **Notes On-The-Go:** Effortlessly create, edit, and delete tasks and notes, all without the need to sign in. Your data is stored locally, ensuring privacy and convenience.
+
+- **Rich Note Creation:** We've integrated Flutter Quill for a powerful, rich note-taking experience. Make your notes stand out with a variety of formatting options.
+
+- **Task Customization:** Enhance task visibility by assigning color codes. Subtasks and detailed descriptions empower you to manage your tasks with precision.
+
+- **Due Dates for Organization:** Never miss a deadline! Set due dates to prioritize tasks and keep your schedule on track.
+
+- **Dark Theme Support:** Comfortable usability even in low-light conditions. Dark theme support for Android 10 and above.
+
+
+## Screenshots
 <div>
   <img src="https://github.com/aswin-asokan/To-Do/assets/86108610/d05c6172-42ea-4ea2-a176-1a287479f47e" alt="screenshot1" height="500">
   <img src="https://github.com/aswin-asokan/To-Do/assets/86108610/d95854db-21fb-42ef-aa35-05fac21a6f17" alt="screenshot2" height="500">
