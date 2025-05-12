@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/aswin/Documents/GitHub/taskevo/linux"
+    "cmake.sourceDirectory": "/home/aswin/Documents/GitHub/taskevo/linux",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

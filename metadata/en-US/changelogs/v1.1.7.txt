@@ -1,3 +1,0 @@
-* Changed name to TaskEVO
-* Changed icon
-* Minor fixes

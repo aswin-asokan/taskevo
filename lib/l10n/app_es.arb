@@ -1,0 +1,43 @@
+{
+    "@@locale": "es",
+    "login": "Iniciar sesión",
+    "@login": {
+        "description": "Botón de inicio de sesión",
+        "type": "text"  
+    },
+    "email": "Correo electrónico",
+    "@email": {
+        "description": "Etiqueta del campo de correo electrónico",
+        "type": "text"  
+    },
+    "password": "Contraseña",
+    "@password": {
+        "description": "Etiqueta del campo de contraseña",
+        "type": "text"  
+    },
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "@forgot_password": {
+        "description": "Enlace para olvidar la contraseña",
+        "type": "text"  
+    },
+    "no_account": "¿No tienes una cuenta?",
+    "@no_account": {
+        "description": "Enlace para no tener cuenta",
+        "type": "text"  
+    },
+    "sign_up": "Regístrate",
+    "@sign_up": {
+        "description": "Botón de registro",
+        "type": "text"  
+    },
+    "name": "Nombre",
+    "@name": {
+        "description": "Etiqueta del campo de nombre",
+        "type": "text"  
+    },
+    "confirm_password": "Confirmar contraseña",
+    "@confirm_password": {
+        "description": "Etiqueta del campo de confirmar contraseña",
+        "type": "text"  
+    }
+}

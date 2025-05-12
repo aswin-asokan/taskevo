@@ -1,0 +1,36 @@
+{
+    "@@locale": "en",
+
+    "login": "Login",
+    "@login": {
+        "description": "Login button"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Email field label"
+    },
+    "password": "Password", 
+    "@password": {
+        "description": "Password field label"
+    },
+    "forgot_password": "Forgot Password?",
+    "@forgot_password": {
+        "description": "Forgot password link"
+    },
+    "no_account": "Don't have an account?",
+    "@no_account": {
+        "description": "No account link"
+    },
+    "sign_up": "Sign Up",
+    "@sign_up": {
+        "description": "Sign up button"
+    },
+    "name": "Name",
+    "@name": {
+        "description": "Name field label"
+    },
+    "confirm_password": "Confirm Password",
+    "@confirm_password": {
+        "description": "Confirm password field label"
+    }
+  }
