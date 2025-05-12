@@ -69,8 +69,15 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) async {
-        if (state is Authenticated) {
-          Navigator.pop(context); // Or nothing at all
+        if (state is AuthLoading) {
+          showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (_) => const Center(child: CircularProgressIndicator()),
+          );
+        } else if (state is Authenticated) {
+          Navigator.pop(context); //loading dialog
+          Navigator.pop(context); //go back to login page
         } else if (state is AuthError) {
           // Optional: show error here too if you want
           ScaffoldMessenger.of(context).showSnackBar(
