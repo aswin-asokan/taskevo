@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -53,11 +50,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDNnlkPpfNcIu28MIUtupmXLy7L-Fm7m2A',
-    appId: '1:554661124602:android:2bee962c436cb0fdab2c43',
-    messagingSenderId: '554661124602',
-    projectId: 'trelza-taskevo',
-    storageBucket: 'trelza-taskevo.firebasestorage.app',
+    apiKey: 'AIzaSyAoTwMFL-FiTiSC-yApirqw8Qd8oGu0DWo',
+    appId: '1:886972984025:android:21156a8074b8a08bbbecc8',
+    messagingSenderId: '886972984025',
+    projectId: 'trelza-taskevo-70548',
+    storageBucket: 'trelza-taskevo-70548.firebasestorage.app',
+  );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBv2NIMZKXJ1NTcYBaHfjZPVy3fhm8dPlA',
+    appId: '1:886972984025:web:1fbf18d77074f052bbecc8',
+    messagingSenderId: '886972984025',
+    projectId: 'trelza-taskevo-70548',
+    authDomain: 'trelza-taskevo-70548.firebaseapp.com',
+    storageBucket: 'trelza-taskevo-70548.firebasestorage.app',
+    measurementId: 'G-46QWT7WH9H',
   );
 
 }
