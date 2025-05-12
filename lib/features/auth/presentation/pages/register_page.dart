@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:trelza_taskevo/features/auth/presentation/cubits/auth_cubits.dart';
 import 'package:trelza_taskevo/features/auth/presentation/cubits/auth_state.dart';
-import 'package:trelza_taskevo/features/home/presentation/pages/home.dart';
 import 'package:trelza_taskevo/shared/extension/app_theme_extension.dart';
 import 'package:trelza_taskevo/shared/widgets/custom_button.dart';
 import 'package:trelza_taskevo/shared/widgets/custom_textfield.dart';
@@ -71,11 +70,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is Authenticated) {
-          // Navigate to Home when registered
-          Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => Home()),
-            (route) => false,
-          );
+          Navigator.pop(context); // Or nothing at all
         } else if (state is AuthError) {
           // Optional: show error here too if you want
           ScaffoldMessenger.of(context).showSnackBar(
